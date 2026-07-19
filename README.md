@@ -92,7 +92,7 @@ Develop a centralized data platform to ingest raw multi-carrier rate sheets, sta
 ## 📊 Dashboard Interface Preview
 *(Tip: Capture clean screenshots of your newly themed Freight Benchmarking dashboard, save them under reports/ and link them here)*
 
-![Freight Benchmarking Overview](asset/benchmarking_dashboard_main.jpg)
+![Freight Benchmarking Overview](assets/benchmarking_dashboard_main.jpg)
 *Figure 1: Best Rate Routing Engine & Multi-Carrier Cost Matrix*
 * **Executive KPI Cards:** Single-value cards displaying active lanes, average market rates, minimum available rates, and expected potential profit.
 * **Smart Data Highlighting:** Bar charts dynamically highlight the **Top 1 Lowest-Price Carrier** (Emerald Green) while maintaining Muted Slate for secondary carriers.
