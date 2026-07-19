@@ -51,7 +51,9 @@ The data engine runs on an optimized BigQuery SQL View (`vw_best_freight_rates`)
 
 3. **Rule 3: Live Validity Status Auditing (`Rate_Status`)**
    - *Logic:* The system continuously evaluates validity dates against the real-time system clock:
-     $$\text{Rate Status} = \begin{cases} \text{Active}, & \text{if } \text{CURRENT\_DATE()} \text{ is between } \text{Valid\_From} \text{ and } \text{Valid\_To} \\ \text{Expired}, & \text{otherwise} \end{cases}$$
+     $$
+\text{Rate Status} = \begin{cases} \text{Active}, & \text{if } \text{CURRENT\_DATE()} \text{ is between } \text{Valid\_From} \text{ and } \text{Valid\_To} \\ \text{Expired}, & \text{otherwise} \end{cases}
+$$
 
 4. **Rule 4: Multi-Criteria Procurement Ranking (`rate_rank`)**
    - *Logic:* The core ranking engine groups data by shipping lanes and equipment profiles, then sorts options dynamically. It prioritizes the absolute lowest financial cost first, using transit time as a tie-breaker:
