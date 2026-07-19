@@ -96,17 +96,5 @@ Develop a centralized data platform to ingest raw multi-carrier rate sheets, sta
 
 ---
 
-## 🚀 How to Replicate This Project
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/](https://github.com/)<your-username>/digital-freight-rate-analytics.git
-   ```
-2. Run `scripts/01_data_generation.py` to produce a fresh synthetic dataset.
-3. Upload `synthetic_freight_rates.csv` to **Google BigQuery**.
-4. Execute `scripts/02_bigquery_transformation.sql` in BigQuery Studio to create the analytics view.
-5. Open `powerbi/freight_rate_dashboard.pbix` and connect it to your BigQuery View.
-
----
-
 ## 📄 License
 This project is open-source software licensed under the MIT License. You are completely free to leverage this engine structure for real-world logistics procurement applications.
