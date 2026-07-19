@@ -51,11 +51,10 @@ The data engine runs on an optimized BigQuery SQL View (`vw_best_freight_rates`)
 
 3. **Rule 3: Live Validity Status Auditing (`Rate_Status`)**
    - *Logic:* The system continuously evaluates validity dates against the real-time system clock:
-     ```text
-     `Rate Status` = 
-       IF `CURRENT_DATE()` is between `Valid_From` and `Valid_To` 
-       THEN `Active`
-       ELSE `Expired`
+     ```sql
+     CASE 
+        WHEN CURRENT_DATE() BETWEEN Valid_From AND Valid_To THEN 'Active'
+        ELSE 'Expired'
      ```
      
 4. **Rule 4: Multi-Criteria Procurement Ranking (`rate_rank`)**
