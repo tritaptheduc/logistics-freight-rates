@@ -46,8 +46,10 @@ The data engine runs on an optimized BigQuery SQL View (`vw_best_freight_rates`)
 
 2. **Rule 2: Automated Client Quoting & Profit Margin Lock**
    - *Logic:* To eliminate manual pricing math for sales teams, the engine automatically calculates a competitive customer selling price with a fixed **15% profit margin**:
+     ```text
      $$\text{Quoted Price USD} = \text{Total Cost USD} \times 1.15$$
      $$\text{Expected Profit USD} = \text{Total Cost USD} \times 0.15$$
+     ```
 
 3. **Rule 3: Live Validity Status Auditing (`Rate_Status`)**
    - *Logic:* The system continuously evaluates validity dates against the real-time system clock:
