@@ -37,6 +37,26 @@ The system consolidates multi-carrier pricing tables into a streamlined format o
 
 ---
 
+## 🧠 Case Study Analysis: Procurement Optimization (STAR Framework)
+
+### 🔴 Situation
+A mid-sized freight forwarding company manages key trade lanes connecting major Vietnamese export ports (Hai Phong, Cat Lai) to massive consumer markets in the US and Europe. Procurement specialists spent **3–4 hours daily** opening separate Excel rate sheets from 7 different global carriers to find the best quote for incoming customer requests. This slow process resulted in delayed responses, caused teams to miss fast-expiring contract deadlines, and frequently led to sub-optimal carrier selections that eroded net profit margins.
+
+### 🎯 Task
+Develop a centralized data platform to ingest raw multi-carrier rate sheets, standardize accessory surcharges, dynamically audit expiration windows, and automatically isolate the absolute lowest-cost carrier option for any shipping route in real time.
+
+### ⚙️ Action
+- **Engineered Data Processing Pipeline:** Wrote a modular Python framework to model complex freight pricing variables, injecting structural rules (e.g., 40HC equipment scaling factor and regional destination parameters).
+- **Constructed SQL Analytical Layer:** Built a self-correcting `vw_best_freight_rates` view in the data warehouse using analytical window partitioning. This automatically isolates the top-performing carrier for every port combination.
+- **Designed BI Decision Dashboard:** Connected the clean view layer to a high-end minimalist Power BI dashboard. This allows sales teams to select any lane filter and instantly see the optimal rate, transit time, and an auto-calculated sales price.
+
+### 🎉 Result
+- **Reduced Quoting Time by 95%:** The sales desk can now generate an optimized, pre-calculated 15% margin quote in under **10 seconds**, down from a 4-hour manual process.
+- **100% Leakage Control:** The engine automatically filters out `Expired` rates, eliminating the risk of quoting clients out-of-date pricing.
+- **Optimized Margin Protection:** By automatically routing volume to the Rank 1 carrier, the procurement team protects profit margins across all active shipping lanes.
+
+---
+
 ## ⚙️ Core Benchmarking Logic & Automated Business Rules
 
 The data engine runs on an optimized BigQuery SQL View (`vw_best_freight_rates`) that automatically refines raw carrier pricing through 4 systematic analytics checkpoints:
@@ -70,26 +90,6 @@ The data engine runs on an optimized BigQuery SQL View (`vw_best_freight_rates`)
      ) AS rate_rank
      ```
    - *Filter Output:* The system filters out all sub-optimal options (`WHERE rate_rank = 1`), leaving only the best carrier alternative for immediate procurement.
-
----
-
-## 🧠 Case Study Analysis: Procurement Optimization (STAR Framework)
-
-### 🔴 Situation
-A mid-sized freight forwarding company manages key trade lanes connecting major Vietnamese export ports (Hai Phong, Cat Lai) to massive consumer markets in the US and Europe. Procurement specialists spent **3–4 hours daily** opening separate Excel rate sheets from 7 different global carriers to find the best quote for incoming customer requests. This slow process resulted in delayed responses, caused teams to miss fast-expiring contract deadlines, and frequently led to sub-optimal carrier selections that eroded net profit margins.
-
-### 🎯 Task
-Develop a centralized data platform to ingest raw multi-carrier rate sheets, standardize accessory surcharges, dynamically audit expiration windows, and automatically isolate the absolute lowest-cost carrier option for any shipping route in real time.
-
-### ⚙️ Action
-- **Engineered Data Processing Pipeline:** Wrote a modular Python framework to model complex freight pricing variables, injecting structural rules (e.g., 40HC equipment scaling factor and regional destination parameters).
-- **Constructed SQL Analytical Layer:** Built a self-correcting `vw_best_freight_rates` view in the data warehouse using analytical window partitioning. This automatically isolates the top-performing carrier for every port combination.
-- **Designed BI Decision Dashboard:** Connected the clean view layer to a high-end minimalist Power BI dashboard. This allows sales teams to select any lane filter and instantly see the optimal rate, transit time, and an auto-calculated sales price.
-
-### 🎉 Result
-- **Reduced Quoting Time by 95%:** The sales desk can now generate an optimized, pre-calculated 15% margin quote in under **10 seconds**, down from a 4-hour manual process.
-- **100% Leakage Control:** The engine automatically filters out `Expired` rates, eliminating the risk of quoting clients out-of-date pricing.
-- **Optimized Margin Protection:** By automatically routing volume to the Rank 1 carrier, the procurement team protects profit margins across all active shipping lanes.
 
 ---
 
