@@ -94,7 +94,6 @@ The data engine runs on an optimized BigQuery SQL View (`vw_best_freight_rates`)
 ---
 
 ## 📊 Dashboard Interface Preview
-*(Tip: Capture clean screenshots of your newly themed Freight Benchmarking dashboard, save them under reports/ and link them here)*
 
 ![Freight Benchmarking Overview](assets/benchmarking_dashboard_main.png)
 *Figure 1: Best Rate Routing Engine & Multi-Carrier Cost Matrix*
